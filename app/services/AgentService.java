@@ -8,6 +8,7 @@ import play.libs.ws.WSResponse;
 
 import java.util.UUID;
 import java.util.concurrent.CompletionStage;
+import java.util.concurrent.ExecutionException;
 
 
 public class AgentService {
@@ -27,10 +28,13 @@ public class AgentService {
             JsonNode response = responsePromise.thenApply(WSResponse::asJson).toCompletableFuture().get();
             agentResponse.keyword = response.get("result").get("parameters").get("keyword").asText();
 
-        } catch (Exception ex) {
-            ex.printStackTrace();
-
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
         }
+
+
         return agentResponse;
     }
 
