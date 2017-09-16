@@ -10,12 +10,18 @@
    tch">
    <md-card flex="none" layout="column">
        <md-content flex="90" id="message-pane" style="width: 800px; 
-       background: url(http://cdn29.us1.fansshare.com/images/coolwallpapers/cool-iphone-backgrounds-hd-cool-iphone-wallpapers-minions-iphone-wallpaper-and-cases-for-iphone-2004834274.jpg);
+       background: url(http://www.publicdomainpictures.net/pictures/130000/velka/black-and-white-background-1437085987k2V.jpg);
        background-repeat:no-repeat; 
        background-size: cover;
        background-position: right-bottom">
-        <div ng-repeat="message in messages" layout="column" layout-align="{{message.sender=='BOT' ? 'start start' : 'start end'}}">
-          <md-card style="max-width:75%; border-radius: 10px; padding: 10px; font-size: 14px"; ng-style="message.sender=='BOT' ?
+        <div ng-repeat="message in messages" layout="column" 
+                            layout-align="{{message.sender=='BOT' ? 'start start' : 'start end'}}">
+
+          <md-card style="max-width:75%; 
+                          border-radius: 10px; 
+                          padding: 10px; 
+                          font-size: 14px"; 
+                          ng-style="message.sender=='BOT' ?
                                         {'background-color':'#fffff'} :
                                         {'background-color':'#FFFFF'}" >
           <span>{{message.text}}</span>

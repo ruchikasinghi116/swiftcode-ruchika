@@ -1,6 +1,7 @@
 # Routes
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
+GET     /chatSocket                 controllers.HomeController.chatSocket
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
@@ -8,7 +9,6 @@ GET     /                           controllers.HomeController.index
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code
 GET     /message                    controllers.AsyncController.message
-GET     /chatSocket                 controllers.HomeController.chatSocket
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
