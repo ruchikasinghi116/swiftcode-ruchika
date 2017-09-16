@@ -41,7 +41,7 @@ public class MessageActor extends UntypedActor {
                    .getAgentResponse((String) message, UUID.randomUUID()).keyword;
            if (!Objects.equals(keyword, "NOT_FOUND")) {
                FeedResponse feedResponse = feedService.getFeedResponse(keyword);
-               messageObject.text = (feedResponse.title == null) ? "No results found" : "Showing results for: " + keyword;
+               messageObject.text = (feedResponse.title == null || keyword == null) ? "No results found" : "Showing results for: " + keyword;
                messageObject.feedResponse = feedResponse;
                messageObject.sender = Message.Sender.BOT;
                out.tell(mapper.writeValueAsString(messageObject), self());

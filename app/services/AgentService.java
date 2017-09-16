@@ -8,7 +8,6 @@ import play.libs.ws.WSResponse;
 
 import java.util.UUID;
 import java.util.concurrent.CompletionStage;
-import java.util.concurrent.ExecutionException;
 
 
 public class AgentService {
@@ -30,7 +29,7 @@ public class AgentService {
 
         } catch (InterruptedException e) {
             e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
