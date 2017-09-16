@@ -2,6 +2,8 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 GET     /chatSocket                 controllers.HomeController.chatSocket
+GET     /login                           controllers.HomeController.login
+POST    /login                           controllers.HomeController.authenticate
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
